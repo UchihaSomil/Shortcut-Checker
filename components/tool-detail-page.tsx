@@ -93,26 +93,33 @@ export function ToolDetailPage({ tool, onBack }: ToolDetailPageProps) {
 
   return (
     <div className="h-full flex flex-col">
-      <div className="flex items-center gap-4 p-6 border-b border-border">
-        <Button variant="ghost" size="sm" onClick={onBack}>
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Back
-        </Button>
+      <div className="p-6 border-b border-border space-y-4">
+        {/* Row 1: Back button */}
+        <div className="flex items-center">
+          <Button variant="ghost" size="sm" onClick={onBack}>
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to search
+          </Button>
+        </div>
+
+        {/* Row 2: Tool icon, name, and shortcut count */}
         <div className="flex items-center gap-3">
           <img
             src={getAppLogo(tool.name) || "/placeholder.svg"}
             alt={`${tool.name} logo`}
             className="w-12 h-12 rounded-lg"
           />
-          <div>
+          <div className="flex items-center gap-3">
             <h1 className="text-2xl font-bold text-foreground">{tool.name}</h1>
-            <p className="text-muted-foreground">{getAppDescription(tool.name)}</p>
+            <Badge variant="outline" className="text-sm">
+              {tool.shortcuts.length} shortcuts
+            </Badge>
           </div>
         </div>
-        <div className="ml-auto">
-          <Badge variant="outline" className="text-sm">
-            {tool.shortcuts.length} shortcuts
-          </Badge>
+
+        {/* Row 3: Tool description */}
+        <div>
+          <p className="text-muted-foreground">{getAppDescription(tool.name)}</p>
         </div>
       </div>
 

@@ -1028,31 +1028,362 @@ export const shortcutsDatabase: AppShortcuts[] = [
 
   // Other Applications
   {
-    name: "Linear",
-    category: "app",
-    conflictLevel: "info",
-    shortcuts: [
-      { keys: "Ctrl+K", description: "Open command palette", type: "windows" },
-      { keys: "⌘+K", description: "Open command palette", type: "mac" },
-      { keys: "C", description: "Create new issue", type: "cross-platform" },
-      { keys: "Ctrl+Enter", description: "Create issue and close dialog", type: "windows" },
-      { keys: "⌘+Enter", description: "Create issue and close dialog", type: "mac" },
-      { keys: "/", description: "Search issues", type: "cross-platform" },
-      { keys: "G then I", description: "Go to inbox", type: "cross-platform" },
-      { keys: "G then M", description: "Go to my issues", type: "cross-platform" },
-      { keys: "G then A", description: "Go to all issues", type: "cross-platform" },
-      { keys: "G then P", description: "Go to projects", type: "cross-platform" },
-      { keys: "G then R", description: "Go to roadmap", type: "cross-platform" },
-      { keys: "Ctrl+Shift+K", description: "Open issue search", type: "windows" },
-      { keys: "⌘+Shift+K", description: "Open issue search", type: "mac" },
-      { keys: "Ctrl+/", description: "Toggle shortcuts help", type: "windows" },
-      { keys: "⌘+/", description: "Toggle shortcuts help", type: "mac" },
-      { keys: "Escape", description: "Close dialog/cancel", type: "cross-platform" },
-      { keys: "Enter", description: "Open selected issue", type: "cross-platform" },
-      { keys: "J", description: "Next issue", type: "cross-platform" },
-      { keys: "K", description: "Previous issue", type: "cross-platform" },
-    ],
-  },
+    "name": "Linear",
+    "category": "app",
+    "conflictLevel": "info",
+    "shortcuts": [
+        {
+            "keys": "Ctrl+K",
+            "description": "Open command palette",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+K",
+            "description": "Open command palette",
+            "type": "mac"
+        },
+        {
+            "keys": "C",
+            "description": "Create new issue",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "Ctrl+Enter",
+            "description": "Save or submit",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+Enter",
+            "description": "Save or submit",
+            "type": "mac"
+        },
+        {
+            "keys": "Esc",
+            "description": "Back",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "Space",
+            "description": "Peek into issue",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "Enter or O",
+            "description": "Open focused item",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "X",
+            "description": "Select in a list",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "Esc",
+            "description": "Clear a list selection",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "↑ or K",
+            "description": "Move up",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "↓ or J",
+            "description": "Move down",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "Alt+Shift+Q",
+            "description": "Logout",
+            "type": "windows"
+        },
+        {
+            "keys": "⌥+Shift+Q",
+            "description": "Logout",
+            "type": "mac"
+        },
+        {
+            "keys": "O+I",
+            "description": "Open issue",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "Ctrl+Shift+↑",
+            "description": "Open parent issue",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+Shift+↑",
+            "description": "Open parent issue",
+            "type": "mac"
+        },
+        {
+            "keys": "Ctrl+Shift+↓",
+            "description": "Open sub issue",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+Shift+↓",
+            "description": "Open sub issue",
+            "type": "mac"
+        },
+        {
+            "keys": "/",
+            "description": "Open search",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "Ctrl+B",
+            "description": "Toggle list/board view",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+B",
+            "description": "Toggle list/board view",
+            "type": "mac"
+        },
+        {
+            "keys": "G then I",
+            "description": "Go to inbox",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "G then M",
+            "description": "Go to my issues",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "G then A",
+            "description": "Go to all issues",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "G then B",
+            "description": "Go to backlog",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "G then P",
+            "description": "Go to projects",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "G then S",
+            "description": "Go to settings",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "E",
+            "description": "Edit issue",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "I",
+            "description": "Assign to me",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "L",
+            "description": "Change labels",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "Shift+L",
+            "description": "Remove label",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "S",
+            "description": "Change status",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "Ctrl+Alt+1-9",
+            "description": "Set issue status",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+⌥+1-9",
+            "description": "Set issue status",
+            "type": "mac"
+        },
+        {
+            "keys": "P",
+            "description": "Change priority",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "Shift+E",
+            "description": "Change estimate",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "Shift+D",
+            "description": "Set due date",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "Ctrl+Delete",
+            "description": "Delete issue",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+Delete",
+            "description": "Delete issue",
+            "type": "mac"
+        },
+        {
+            "keys": "Shift+C",
+            "description": "Add to cycle",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "Shift+P",
+            "description": "Add to project",
+            "type": "cross-platform"
+        },
+        {
+            "keys": "Ctrl+M",
+            "description": "Comment on issue",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+M",
+            "description": "Comment on issue",
+            "type": "mac"
+        },
+        {
+            "keys": "Ctrl+.",
+            "description": "Copy issue ID",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+.",
+            "description": "Copy issue ID",
+            "type": "mac"
+        },
+        {
+            "keys": "Ctrl+Shift+,",
+            "description": "Copy issue URL",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+Shift+,",
+            "description": "Copy issue URL",
+            "type": "mac"
+        },
+        {
+            "keys": "Ctrl+B",
+            "description": "Bold",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+B",
+            "description": "Bold",
+            "type": "mac"
+        },
+        {
+            "keys": "Ctrl+I",
+            "description": "Italic",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+I",
+            "description": "Italic",
+            "type": "mac"
+        },
+        {
+            "keys": "Ctrl+D",
+            "description": "Strikethrough",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+D",
+            "description": "Strikethrough",
+            "type": "mac"
+        },
+        {
+            "keys": "Ctrl+>",
+            "description": "Blockquote",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+>",
+            "description": "Blockquote",
+            "type": "mac"
+        },
+        {
+            "keys": "Ctrl+Shift+7",
+            "description": "Todo list",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+Shift+7",
+            "description": "Todo list",
+            "type": "mac"
+        },
+        {
+            "keys": "Ctrl+Shift+8",
+            "description": "Bulleted list",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+Shift+8",
+            "description": "Bulleted list",
+            "type": "mac"
+        },
+        {
+            "keys": "Ctrl+Shift+9",
+            "description": "Numbered list",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+Shift+9",
+            "description": "Numbered list",
+            "type": "mac"
+        },
+        {
+            "keys": "Ctrl+Shift+\\",
+            "description": "Code block",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+Shift+\\",
+            "description": "Code block",
+            "type": "mac"
+        },
+        {
+            "keys": "Ctrl+K",
+            "description": "Turn text into link",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+K",
+            "description": "Turn text into link",
+            "type": "mac"
+        },
+        {
+            "keys": "Ctrl+Z",
+            "description": "Undo",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+Z",
+            "description": "Undo",
+            "type": "mac"
+        },
+        {
+            "keys": "Ctrl+Shift+Z",
+            "description": "Redo",
+            "type": "windows"
+        },
+        {
+            "keys": "⌘+Shift+Z",
+            "description": "Redo",
+            "type": "mac"
+        }
+    ]
+}
   {
     name: "Jira",
     category: "app",

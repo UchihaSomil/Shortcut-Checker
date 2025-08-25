@@ -1,6 +1,10 @@
+"use client"
+
 import { Badge } from "@/components/ui/badge"
-import { AlertTriangle, Info } from "lucide-react"
+import { AlertTriangle } from "lucide-react"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import Image from "next/image"
+import { useState } from "react"
 
 interface SearchResultItemProps {
   appName: string
@@ -18,26 +22,30 @@ export function SearchResultItem({
   conflictLevel,
 }: SearchResultItemProps) {
   const isWarning = conflictLevel === "warning"
+  const [imageError, setImageError] = useState(false)
 
   return (
     <div
-      className={`flex items-center gap-3 p-3 rounded-lg border transition-colors hover:bg-muted/50 ${
-        isWarning ? "border-orange-200 bg-orange-50/50" : "border-blue-200 bg-blue-50/50"
+      className={`flex items-center gap-3 p-3 rounded-lg border transition-colors ${
+        isWarning
+          ? "border-orange-200 bg-orange-50/50 hover:bg-orange-100/70"
+          : "border-gray-200 bg-gray-50/50 hover:bg-gray-100/70"
       }`}
     >
       {/* App Icon */}
       <div className="flex-shrink-0">
-        {appLogo ? (
+        {appLogo && !imageError ? (
           <Image
             src={appLogo || "/placeholder.svg"}
             alt={`${appName} logo`}
             width={24}
             height={24}
             className="rounded"
+            onError={() => setImageError(true)}
           />
         ) : (
-          <div className="w-6 h-6 bg-muted rounded flex items-center justify-center">
-            <span className="text-xs font-medium text-muted-foreground">{appName.charAt(0)}</span>
+          <div className="w-6 h-6 bg-gray-200 rounded flex items-center justify-center">
+            <span className="text-xs font-semibold text-gray-700">{appName.charAt(0).toUpperCase()}</span>
           </div>
         )}
       </div>
@@ -55,7 +63,18 @@ export function SearchResultItem({
         <Badge variant="secondary" className="font-mono text-xs">
           {shortcutKeys}
         </Badge>
-        {isWarning ? <AlertTriangle className="h-4 w-4 text-orange-600" /> : <Info className="h-4 w-4 text-blue-600" />}
+        {isWarning && (
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger>
+                <AlertTriangle className="h-4 w-4 text-orange-600" />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>This shortcut is used in browser/OS and might conflict</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        )}
       </div>
     </div>
   )
